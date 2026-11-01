@@ -4,245 +4,149 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Samastik</title>
-<meta name="description" content="Samastik builds workflow automations, AI agents and CRM setups for small businesses in India, the US, the UK, Canada and Australia. Every project starts with a Workflow Map of how your team actually works.">
+<meta name="description" content="Samastik builds automation and AI systems that bring in leads, follow up until deals close, and run day-to-day operations for small businesses, in accounts they own.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231f4d3a%22/%3E%3Cg%20transform%3D%22translate%2832%2032%29%20scale%280.72%29%20translate%28-32%20-32%29%22%3E%3Cpath%20d%3D%22M46%2014%20H27%20a9%209%200%200%200%200%2018%20h10%20a9%209%200%200%201%200%2018%20H18%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22/%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%2223%22%20r%3D%225%22%20fill%3D%22%231f4d3a%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%223%22/%3E%3Ccircle%20cx%3D%2246%22%20cy%3D%2241%22%20r%3D%225%22%20fill%3D%22%231f4d3a%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%223%22/%3E%3Ccircle%20cx%3D%2246%22%20cy%3D%2214%22%20r%3D%225%22%20fill%3D%22%23ffffff%22/%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%2250%22%20r%3D%225%22%20fill%3D%22%23e2a72e%22/%3E%3C/g%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&family=Tiro+Devanagari+Sanskrit&display=swap">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Samastik",
-  "url": "https://samastik.com",
-  "email": "hello@samastik.com",
-  "description": "Workflow automations, AI agents and CRM setup for small businesses. Every project starts with a fixed-fee Workflow Map: we watch how the team works, list every repeated task, and rank what to automate by hours saved per week.",
-  "areaServed": ["India", "United States", "United Kingdom", "Canada", "Australia"],
-  "knowsAbout": ["Workflow automation", "AI agents", "CRM setup", "Business process automation"],
-  "makesOffer": {"@type": "Offer", "name": "Workflow Map", "description": "A one-week, fixed-fee map of a small business's workflow with a ranked list of tasks to automate and hours saved per week for each. The fee counts toward any build."}
-}
-</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&family=Tiro+Devanagari+Sanskrit&display=swap">
 <style>
-/* Layout: ledger-green brand on a cool off-white ground; the ranked Workflow Map is the signature, repeated as the logo's three bars. Marigold marks only what to automate. Light look by choice. */
+/* Layout: one dark ground, a loud first screen (customer's own words + three hard facts), then a marigold guarantee card, problem cards, steps with the price, ownership, who, contact. Dark by choice. */
 :root {
-  --ground: #f6f7f3;
-  --surface: #ffffff;
-  --ink: #15201b;
-  --ink-2: #3a4740;
-  --ink-3: #4b5a52;
-  --rule: #dde2da;
-  --rule-soft: #edf0ea;
-  --green: #1f4d3a;
-  --green-deep: #163a2b;
-  --green-tint: #dcebe2;
-  --green-mute: #8fae9c;
-  --on-green: #ffffff;
-  --on-green-soft: #cfe0d5;
-  --marigold: #f3d27e;
-  --marigold-ink: #3d2c00;
-  --marigold-wash: #fbf3dc;
-  --mark: #e2a72e;
-  --neutral-tint: #e9ece6;
+  --bg: #0e0f0f;
+  --bg-2: #141616;
+  --card: #171a19;
+  --line: #272b2a;
+  --ink: #f3f4f2;
+  --ink-2: #b8bebb;
+  --ink-3: #8c9490;
+  --green: #1d4a37;
+  --green-lit: #7cc6a0;
+  --marigold: #e8ad35;
+  --marigold-soft: #f3d27e;
+  --on-marigold: #1a1300;
   --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
   --deva: "Tiro Devanagari Sanskrit", "Noto Serif Devanagari", serif;
-  color-scheme: light;
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html { scroll-behavior: smooth; }
-body { background: var(--ground); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
-a { color: var(--green); }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 4px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+a { color: var(--marigold-soft); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--marigold); outline-offset: 3px; border-radius: 4px; }
 .wrap { max-width: 1160px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
 h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; }
-h1 { font-weight: 700; font-size: clamp(2.35rem, 5.2vw, 3.65rem); line-height: 1.05; letter-spacing: -0.028em; }
-h2 { font-weight: 700; font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.1; letter-spacing: -0.022em; }
-h3 { font-weight: 700; font-size: 1.12rem; line-height: 1.3; letter-spacing: -0.01em; }
+h2 { font-weight: 800; font-size: clamp(1.9rem, 4vw, 2.9rem); line-height: 1.06; letter-spacing: -0.03em; }
+h3 { font-weight: 700; font-size: 1.15rem; line-height: 1.3; }
 p { margin: 0; max-width: 62ch; }
-.eyebrow { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
-.soft { color: var(--ink-3); }
-.hl { color: var(--green); box-shadow: inset 0 -0.26em 0 var(--marigold); }
+.eyebrow { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-lit); }
+.soft { color: var(--ink-2); }
+.btn { display: inline-flex; align-items: center; justify-content: center; text-align: center; min-height: 52px; padding: 12px 26px; border-radius: 8px; font-family: var(--body); font-weight: 600; font-size: 1.02rem; text-decoration: none; border: 1.5px solid transparent; }
+.btn.primary { background: var(--marigold); color: var(--on-marigold); }
+.btn.primary:hover { background: var(--marigold-soft); }
+.btn.ghost { color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--ink-3); }
 
-/* Buttons */
-.btn { display: inline-flex; align-items: center; justify-content: center; text-align: center; line-height: 1.3; min-height: 48px; font-family: var(--body); font-weight: 600; font-size: 1rem; padding: 10px 24px; border-radius: 6px; text-decoration: none; border: 1.5px solid transparent; }
-.btn.primary { background: var(--green); color: var(--on-green); }
-.btn.primary:hover { background: var(--green-deep); }
-.btn.secondary { background: var(--surface); color: var(--green); border-color: #b9c6bd; }
-.btn.secondary:hover { border-color: var(--green); }
-.btn.on-dark { background: var(--marigold); color: var(--marigold-ink); }
-
-/* Header */
-header.site { background: var(--surface); border-bottom: 1px solid var(--rule); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; }
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--surface); }
+header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(14,15,15,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--bg); }
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
 .brand-name { font-family: var(--display); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; }
 .brand-name sup { font-size: 0.42em; font-weight: 600; color: var(--ink-3); margin-left: 1px; }
-nav.top { display: flex; align-items: center; gap: 28px; font-weight: 500; font-size: 0.95rem; }
+nav.top { display: flex; align-items: center; gap: 26px; font-size: 0.95rem; }
 nav.top a.link { color: var(--ink-2); text-decoration: none; }
-nav.top a.link:hover { color: var(--green); }
-nav.top .btn { min-height: 44px; padding: 0 18px; font-size: 0.93rem; }
+nav.top a.link:hover { color: var(--ink); }
+nav.top .btn { min-height: 42px; padding: 0 18px; font-size: 0.93rem; white-space: nowrap; }
 
-/* Hero */
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: center; padding-block: 72px 56px; }
-.hero-copy { display: grid; gap: 22px; }
-.hero .lede { font-size: 1.18rem; color: var(--ink-2); max-width: 31em; }
+.hero .wrap { padding-block: 88px 72px; display: grid; gap: 34px; }
+.hero h1 { font-weight: 900; font-size: clamp(2.7rem, 8vw, 6.2rem); line-height: 0.98; letter-spacing: -0.045em; max-width: 14ch; }
+.hero h1 .yes { display: block; color: var(--marigold); }
+.hero .lede { font-size: clamp(1.1rem, 1.8vw, 1.3rem); color: var(--ink-2); max-width: 44ch; }
 .actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.facts { list-style: none; margin: 6px 0 0; padding: 20px 0 0; border-top: 1px solid var(--rule); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.facts li { display: grid; gap: 2px; align-content: start; }
-.facts strong { font-family: var(--display); font-weight: 700; font-size: 0.95rem; }
-.facts span { font-size: 0.85rem; color: var(--ink-3); line-height: 1.45; }
+.facts { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.facts li { display: grid; gap: 4px; padding: 26px 24px 4px 0; align-content: start; }
+.facts li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+.facts .num { font-family: var(--display); font-weight: 900; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.04em; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.facts .num small { font-size: 0.45em; font-weight: 700; letter-spacing: -0.01em; color: var(--ink-2); }
+.facts .what { color: var(--ink-2); font-size: 0.98rem; }
 
-/* Workflow Map card (signature) */
-.map { margin: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; box-shadow: 0 18px 40px -26px rgba(21, 32, 27, 0.28); min-width: 0; }
-.map-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 24px; background: var(--green); color: var(--on-green); }
-.map-head h2, .map-head h3 { font-size: 1.2rem; letter-spacing: -0.01em; }
-.map-head .sub { display: block; font-family: var(--mono); font-size: 0.75rem; color: var(--on-green-soft); margin-top: 2px; }
-.tag { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; border: 1px solid #5f8a74; color: #e3eee7; white-space: nowrap; }
-.map-cols, .map-row { display: grid; grid-template-columns: minmax(0, 1fr) 128px 104px; gap: 12px; align-items: center; padding: 0 24px; }
-.map-cols { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); padding-top: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
-.map-rows { list-style: none; margin: 0; padding: 0; }
-.map-row { padding-top: 11px; padding-bottom: 11px; border-bottom: 1px solid var(--rule-soft); font-size: 0.92rem; }
-.map-row:last-child { border-bottom: 0; }
-.hours { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 0.8rem; }
-.bar { display: block; height: 8px; border-radius: 2px; background: var(--green); }
-.bar.mute { background: var(--green-mute); }
-.bar.grey { background: #c3ccc6; }
-.hours .unit { display: none; }
-.pill { justify-self: start; font-family: var(--body); font-size: 0.75rem; font-weight: 700; padding: 4px 9px; border-radius: 4px; white-space: nowrap; }
-.pill.auto { background: var(--marigold); color: var(--marigold-ink); }
-.pill.assist { background: var(--green-tint); color: var(--green); }
-.pill.human { background: var(--neutral-tint); color: var(--ink-2); }
-.map-total { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 16px 24px; background: var(--marigold-wash); border-top: 1px solid #f0e2b8; }
-.map-total .label { font-family: var(--display); font-weight: 700; }
-.map-total .big { font-family: var(--display); font-weight: 800; font-size: 1.6rem; letter-spacing: -0.02em; color: var(--green); white-space: nowrap; }
-.map-total .big small { font-size: 0.58em; font-weight: 600; color: var(--ink-3); }
-.map-note { padding: 10px 24px 14px; font-size: 0.78rem; color: var(--ink-3); max-width: none; }
-
-/* Trade strip */
-.trades { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--surface); }
-.trades .wrap { display: flex; gap: 10px 12px; align-items: center; flex-wrap: wrap; padding-block: 18px; }
-.trades .eyebrow { color: var(--ink-3); margin-right: 4px; }
-.chip { font-size: 0.88rem; color: var(--ink-2); padding: 6px 12px; border: 1px solid var(--rule); border-radius: 999px; background: var(--ground); text-decoration: none; }
-a.chip:hover { border-color: var(--green); color: var(--green); }
-
-/* Sections */
-section.block > .wrap { padding-block: 80px; display: grid; gap: 36px; }
-section.block + section.block > .wrap { border-top: 1px solid var(--rule); }
+section.block > .wrap { padding-block: 88px; display: grid; gap: 40px; }
 .head { display: grid; gap: 14px; }
+
+.guarantee .wrap { padding-block: 24px 24px; }
+.g-card { background: var(--card); color: var(--ink); border: 1px solid var(--line); border-left: 6px solid var(--marigold); border-radius: 16px; padding: clamp(28px, 5vw, 56px); display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+.g-card .eyebrow { color: var(--marigold); }
+.g-card p { color: var(--ink-2); }
+.g-card h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); }
+.g-card p { font-size: 1.05rem; }
+
+.problems { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.problem { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 26px; display: grid; gap: 10px; align-content: start; }
+.problem h3 { font-size: 1.3rem; letter-spacing: -0.015em; }
+.problem p { color: var(--ink-2); }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.steps li { border-top: 3px solid var(--green-lit); padding-top: 20px; display: grid; gap: 10px; align-content: start; }
+.steps li:first-child { border-top-color: var(--marigold); }
+.step-n { font-family: var(--mono); font-size: 0.8rem; color: var(--ink-3); letter-spacing: 0.06em; text-transform: uppercase; }
+.steps .price { font-family: var(--display); font-weight: 800; font-size: 1.05rem; color: var(--marigold); }
+
+.own { background: var(--green); }
+.own .wrap { padding-block: 72px; display: grid; gap: 32px; }
+.own .eyebrow { color: var(--marigold-soft); }
+.own-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.own-grid li { display: grid; gap: 6px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.24); }
+.own-grid strong { font-family: var(--display); font-size: 1.15rem; }
+.own-grid span { color: #d3e3d9; }
+
 .split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr); gap: 56px; align-items: start; }
-.big-line { font-family: var(--display); font-weight: 700; font-size: clamp(1.35rem, 2.6vw, 1.75rem); line-height: 1.28; letter-spacing: -0.015em; max-width: 28ch; }
-.stack { display: grid; gap: 16px; }
-.builds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
-.builds article { display: grid; gap: 10px; align-content: start; padding-top: 18px; border-top: 3px solid var(--green); }
-ul.ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 0.95rem; color: var(--ink-2); }
-ul.ticks li { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 10px; align-items: baseline; }
-ul.ticks li::before { content: ""; width: 10px; height: 4px; border-radius: 1px; background: var(--mark); transform: translateY(-3px); }
-
-/* Offer band */
-.offer { background: var(--green); color: var(--on-green); }
-.offer .eyebrow { color: var(--marigold); }
-.offer p { color: var(--on-green-soft); }
-.offer h2 { color: var(--on-green); }
-.offer .wrap { padding-block: 80px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
-.offer .fee { font-family: var(--display); font-weight: 700; font-size: 1.25rem; color: var(--on-green); }
-.days { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid rgba(255, 255, 255, 0.18); }
-.days li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; padding-block: 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
-.days .when { font-family: var(--mono); font-size: 0.8rem; color: var(--marigold); padding-top: 3px; }
-.days strong { display: block; font-family: var(--display); font-size: 1.02rem; color: var(--on-green); margin-bottom: 4px; }
-.days span.text { color: var(--on-green-soft); font-size: 0.95rem; }
-
-/* Industries: pick your trade */
-#industries { scroll-margin-top: 72px; }
-.trade-tabs { display: flex; flex-wrap: wrap; gap: 10px; }
-.trade-tab { min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid var(--rule); background: var(--surface); font-family: var(--body); font-weight: 600; font-size: 0.95rem; color: var(--ink-2); cursor: pointer; }
-.trade-tab:hover { border-color: var(--green); color: var(--green); }
-.trade-tab[aria-selected="true"] { background: var(--green); border-color: var(--green); color: var(--on-green); }
-.trade-panel { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 48px; align-items: start; }
-.trade-copy { display: grid; gap: 16px; align-content: start; padding-top: 6px; }
-.trade-copy .who { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); }
-.trade-copy h3 { font-size: clamp(1.4rem, 2.6vw, 1.8rem); line-height: 1.15; letter-spacing: -0.02em; }
-.trade-copy .btn { justify-self: start; margin-top: 6px; }
-
-/* Steps */
-.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
-.steps li { display: grid; gap: 10px; align-content: start; }
-.step-n { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.8rem; color: var(--green); }
-.step-n b { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--green); color: var(--on-green); font-weight: 500; }
-
-/* About */
-.about-name { display: grid; gap: 6px; align-content: start; }
-.deva { font-family: var(--deva); font-size: clamp(3rem, 7vw, 4.4rem); line-height: 1.1; color: var(--green); }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { font-size: 0.95rem; color: var(--ink); padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
+.stack { display: grid; gap: 18px; }
+.deva { font-family: var(--deva); font-size: clamp(2.6rem, 6vw, 3.8rem); line-height: 1.1; color: var(--green-lit); }
 .gloss { font-family: var(--mono); font-size: 0.82rem; color: var(--ink-3); }
-blockquote { margin: 0; padding-left: 18px; border-left: 3px solid var(--marigold); font-family: var(--display); font-weight: 700; font-size: 1.2rem; line-height: 1.35; max-width: 36ch; }
 
-/* Contact */
-.contact { background: var(--surface); border-top: 1px solid var(--rule); }
-.contact .wrap { padding-block: 72px; display: grid; gap: 24px; }
+.contact .wrap { padding-block: 96px; display: grid; gap: 26px; border-top: 1px solid var(--line); }
+.contact h2 { font-size: clamp(2.2rem, 5.5vw, 4rem); max-width: 16ch; }
 .contact-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-.email { font-family: var(--mono); font-size: 1.05rem; user-select: all; background: var(--ground); border: 1px solid var(--rule); border-radius: 6px; padding: 12px 14px; overflow-wrap: anywhere; }
-button.copy { min-height: 48px; font-family: var(--body); font-weight: 600; font-size: 0.95rem; background: var(--surface); color: var(--green); border: 1.5px solid #b9c6bd; border-radius: 6px; padding: 0 16px; cursor: pointer; }
+.email { font-family: var(--mono); font-size: 1.05rem; user-select: all; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 13px 16px; overflow-wrap: anywhere; color: var(--ink); }
+button.copy { min-height: 52px; font-family: var(--body); font-weight: 600; font-size: 0.98rem; background: transparent; color: var(--ink); border: 1.5px solid var(--line); border-radius: 8px; padding: 0 18px; cursor: pointer; }
+button.copy:hover { border-color: var(--ink-3); }
 
-footer.site { border-top: 1px solid var(--rule); }
-footer.site .wrap { padding-block: 26px; display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; font-size: 0.85rem; color: var(--ink-3); }
+footer.site .wrap { padding-block: 26px; display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; font-size: 0.86rem; color: var(--ink-3); border-top: 1px solid var(--line); }
 footer.site a { color: var(--ink-3); }
 
-/* Tablet */
 @media (max-width: 940px) {
-  .hero .wrap, .split, .offer .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; }
-  .hero .wrap { padding-block: 48px 40px; }
-  .builds, .steps { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-  .trade-panel { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .g-card, .split { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .steps, .own-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   nav.top a.link { display: none; }
 }
-/* Phone */
 @media (max-width: 620px) {
   body { font-size: 16px; }
-  header.site .wrap { min-height: 60px; }
-  .brand-name { font-size: 1.2rem; }
-  .hero .wrap { padding-block: 32px 32px; gap: 32px; }
+  .hero .wrap { padding-block: 48px 48px; gap: 26px; }
   .actions { flex-direction: column; }
   .actions .btn { width: 100%; }
-  .facts { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-  .facts li { grid-template-columns: 9.5em minmax(0, 1fr); gap: 10px; align-items: baseline; }
-  .map-head { padding: 16px 18px; align-items: flex-start; }
-  .map-cols { display: none; }
-  .map-row { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "task task" "hours pill"; row-gap: 8px; padding: 14px 18px; font-size: 0.95rem; }
-  .map-row .task { grid-area: task; }
-  .map-row .hours { grid-area: hours; }
-  .map-row .pill { grid-area: pill; justify-self: end; }
-  .hours .unit { display: inline; }
-  .map-total { padding: 14px 18px; }
-  .map-total .big { font-size: 1.35rem; }
-  .map-note { padding: 10px 18px 14px; }
-  .trades .eyebrow { width: 100%; }
-  section.block > .wrap, .offer .wrap { padding-block: 56px; }
-  .trade-tabs { gap: 8px; }
-  .trade-tab { padding: 0 14px; font-size: 0.9rem; }
-  .trade-copy .btn { justify-self: stretch; }
-  .days li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
-  .contact .wrap { padding-block: 56px; }
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .facts li, .facts li + li { padding: 18px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+  .problems { grid-template-columns: minmax(0, 1fr); }
+  section.block > .wrap { padding-block: 60px; }
+  .contact .wrap { padding-block: 64px; }
   .contact-row .btn, .contact-row .email, .contact-row button.copy { width: 100%; text-align: center; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
-<style>html,body{margin:0;padding:0}img{max-width:100%}</style>
 </head>
 <body>
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Samastik home">
-      <svg width="24" height="29" viewBox="13 9 38 46" aria-hidden="true"><path d="M46 14 H27 a9 9 0 0 0 0 18 h10 a9 9 0 0 1 0 18 H18" fill="none" stroke="#1f4d3a" stroke-width="5" stroke-linecap="round"></path><circle cx="18" cy="23" r="5" fill="#ffffff" stroke="#1f4d3a" stroke-width="3"></circle><circle cx="46" cy="41" r="5" fill="#ffffff" stroke="#1f4d3a" stroke-width="3"></circle><circle cx="46" cy="14" r="5" fill="#1f4d3a"></circle><circle cx="18" cy="50" r="5" fill="#b97d0a"></circle></svg>
-      <span class="brand-name">Samastik<sup>™</sup></span>
-    </a>
+    <a class="brand" href="#top" aria-label="Samastik home"><svg width="26" height="31" viewBox="13 9 38 46" aria-hidden="true"><path d="M46 14 H27 a9 9 0 0 0 0 18 h10 a9 9 0 0 1 0 18 H18" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"></path><circle cx="18" cy="23" r="5" fill="#0e0f0f" stroke="#ffffff" stroke-width="3"></circle><circle cx="46" cy="41" r="5" fill="#0e0f0f" stroke="#ffffff" stroke-width="3"></circle><circle cx="46" cy="14" r="5" fill="#ffffff"></circle><circle cx="18" cy="50" r="5" fill="#e2a72e"></circle></svg><span class="brand-name">Samastik<sup>™</sup></span></a>
     <nav class="top" aria-label="Main">
-      <a class="link" href="#workflow-map">Workflow Map</a>
-      <a class="link" href="#industries">Industries</a>
       <a class="link" href="#how">How it works</a>
-      <a class="btn primary" href="mailto:hello@samastik.com?subject=Workflow%20Map">Book a call</a>
+      <a class="link" href="#call">Free call</a>
+      <a class="btn primary" href="#contact">Book a free call</a>
     </nav>
   </div>
 </header>
@@ -250,321 +154,45 @@ footer.site a { color: var(--ink-3); }
 <main id="top">
   <section class="hero" aria-labelledby="hero-h">
     <div class="wrap">
-      <div class="hero-copy">
-        <p class="eyebrow">Automation for small businesses</p>
-        <h1 id="hero-h">Automation that starts with the <span class="hl">whole picture.</span></h1>
-        <p class="lede">We map your whole workflow before we automate a single step. Then we build the automations, AI agents and CRM setup that save your team the most hours.</p>
-        <div class="actions">
-          <a class="btn primary" href="mailto:hello@samastik.com?subject=Workflow%20Map">Book a Workflow Map</a>
-          <a class="btn secondary" href="#industries">See what we automate</a>
-        </div>
-        <ul class="facts">
-          <li><strong>Fixed fee</strong><span>Quoted after a 20-minute call</span></li>
-          <li><strong>Counts toward the build</strong><span>Hire us and the map fee is credited</span></li>
-          <li><strong>Yours to keep</strong><span>Use the map with anyone you like</span></li>
-        </ul>
+      <p class="eyebrow">Automation and AI for small businesses</p>
+      <h1 id="hero-h">Win more work. <span class="yes">Do less admin.</span></h1>
+      <p class="lede">We build systems that bring in leads, follow up until deals close, and run your day-to-day operations. All of it in accounts you own.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Book a free growth call</a>
+        <a class="btn ghost" href="#how">How it works</a>
       </div>
-
-      <figure class="map" aria-labelledby="map-title">
-        <div class="map-head">
-          <div>
-            <h2 id="map-title">Sample Workflow Map</h2>
-            <span class="sub">4-person cleaning company · ranked by hours a week</span>
-          </div>
-          <span class="tag">Illustrative</span>
-        </div>
-        <div class="map-cols" aria-hidden="true"><span>Repeated task</span><span>Hours / week</span><span>Our call</span></div>
-        <ol class="map-rows">
-          <li class="map-row"><span class="task">Copying quote requests into the job sheet</span><span class="hours"><span class="bar" style="width:72px"></span>6<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-          <li class="map-row"><span class="task">Messaging rota changes to each cleaner</span><span class="hours"><span class="bar" style="width:48px"></span>4<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-          <li class="map-row"><span class="task">Chasing unpaid invoices</span><span class="hours"><span class="bar" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-          <li class="map-row"><span class="task">Answering "are you free Tuesday?"</span><span class="hours"><span class="bar mute" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill assist">AI drafts</span></li>
-          <li class="map-row"><span class="task">Handling complaints</span><span class="hours"><span class="bar grey" style="width:24px"></span>2<span class="unit"> hrs/wk</span></span><span class="pill human">Keep human</span></li>
-        </ol>
-        <div class="map-total"><span class="label">Hours we could give back</span><span class="big">16 hrs <small>/ week</small></span></div>
-        <p class="map-note">An example of the format. Your map uses your team's real tasks and hours.</p>
-      </figure>
+      <ul class="facts">
+        <li><span class="num">Free</span><span class="what">30-minute call to see where automation would help most</span></li>
+        <li><span class="num">$530 <small>/ ₹19,900</small></span><span class="what">one-week Workflow Map, credited toward the build</span></li>
+        <li><span class="num">100%</span><span class="what">yours: everything runs in accounts in your name</span></li>
+      </ul>
     </div>
   </section>
 
-  <div class="trades" aria-label="Trades we automate for">
+  <section class="guarantee" id="call" aria-labelledby="g-h">
     <div class="wrap">
-      <span class="eyebrow">We automate for</span>
-      <a class="chip" href="#industries" data-trade="recruitment">Recruitment</a>
-      <a class="chip" href="#industries" data-trade="cleaning">Cleaning services</a>
-      <a class="chip" href="#industries" data-trade="landscaping">Landscaping</a>
-      <a class="chip" href="#industries" data-trade="trades">Plumbers, electricians &amp; HVAC</a>
-      <a class="chip" href="#industries" data-trade="property">Property management</a>
-      <a class="chip" href="#industries" data-trade="auto">Auto repair &amp; sales</a>
-      <a class="chip" href="#industries" data-trade="immigration">Immigration consultancies</a>
-    </div>
-  </div>
-
-  <section class="block" aria-labelledby="problem-h">
-    <div class="wrap split">
-      <div class="head">
-        <p class="eyebrow">The problem</p>
-        <h2 id="problem-h">Most automation fails at step one.</h2>
-      </div>
-      <div class="stack">
-        <p class="big-line">Someone automates the step they noticed, not the step that costs the most.</p>
-        <p class="soft">The result is a clever tool nobody uses, while the real time sink, the copying, chasing and re-typing that fills each week, carries on by hand. We start by looking at the whole workflow, so the first thing we build is the thing that pays back fastest.</p>
+      <div class="g-card">
+        <div class="head">
+          <p class="eyebrow">Start here, free</p>
+          <h2 id="g-h">A 30-minute growth call.</h2>
+        </div>
+        <p>Tell us how you find customers and how the work gets done. We'll point out what's worth automating first, and tell you straight if it isn't worth it yet.</p>
       </div>
     </div>
   </section>
 
-  <section class="block" aria-labelledby="build-h">
+  <section class="block" aria-labelledby="p-h">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">What we build</p>
-        <h2 id="build-h">Three kinds of work, one goal: fewer hours on repeat.</h2>
+        <h2 id="p-h">Systems that win the work and run the work.</h2>
       </div>
-      <div class="builds">
-        <article>
-          <h3>Workflow automations</h3>
-          <p class="soft">Connect the tools you already use so data moves on its own.</p>
-          <ul class="ticks">
-            <li>Form and email enquiries into your job list or CRM</li>
-            <li>Invoices, reminders and follow-ups sent on schedule</li>
-            <li>Reports that build themselves each week</li>
-          </ul>
-        </article>
-        <article>
-          <h3>AI agents</h3>
-          <p class="soft">Assistants that handle the first pass of routine conversations and paperwork.</p>
-          <ul class="ticks">
-            <li>Reply drafts for common customer questions</li>
-            <li>Reading documents and pulling out the details</li>
-            <li>Qualifying leads before they reach you</li>
-          </ul>
-        </article>
-        <article>
-          <h3>CRM setup</h3>
-          <p class="soft">One place for every lead, client and job, set up the way your team works.</p>
-          <ul class="ticks">
-            <li>Pipelines that match your real sales steps</li>
-            <li>Clean import of your existing contacts</li>
-            <li>Training so the team actually uses it</li>
-          </ul>
-        </article>
+      <div class="problems">
+        <article class="problem"><h3>Leads</h3><p>Find and qualify the right prospects, so the pipeline never runs dry.</p></article>
+        <article class="problem"><h3>Sales follow-up</h3><p>Every enquiry answered in minutes and followed up until it's a yes or a no.</p></article>
+        <article class="problem"><h3>Operations</h3><p>Bookings, onboarding, invoices and customer updates handled without anyone re-typing them.</p></article>
+        <article class="problem"><h3>Reporting</h3><p>Weekly numbers that put themselves together, so you can see what's working.</p></article>
       </div>
-    </div>
-  </section>
-
-  <section class="offer" id="workflow-map" aria-labelledby="offer-h">
-    <div class="wrap">
-      <div class="stack">
-        <p class="eyebrow">Start here</p>
-        <h2 id="offer-h">The Workflow Map</h2>
-        <p>One week, fixed fee. We watch how your team actually works, list every task that repeats, and hand back a ranked list of what to automate, with the hours each one would save per week.</p>
-        <p class="fee">Fixed fee, quoted after a 20-minute call.</p>
-        <p>If you hire us to build, the fee counts toward the build. If you don't, the map is yours to use with anyone.</p>
-        <div class="actions" style="margin-top:8px">
-          <a class="btn on-dark" href="mailto:hello@samastik.com?subject=Workflow%20Map">Book a Workflow Map</a>
-        </div>
-      </div>
-      <ol class="days" aria-label="What happens during the week">
-        <li><span class="when">Day 1</span><span><strong>Kick-off call</strong><span class="text">With you and the people doing the work. We list your tools and where the time goes.</span></span></li>
-        <li><span class="when">Days 2–4</span><span><strong>Follow the real work</strong><span class="text">Enquiries, bookings, invoices, hand-offs. Every repeated task is written down with how long it takes.</span></span></li>
-        <li><span class="when">Day 5</span><span><strong>You get the map</strong><span class="text">Every task ranked by hours per week, marked automate, AI-assisted or keep human, with a build estimate for the top items.</span></span></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="block" id="industries" aria-labelledby="ind-h">
-    <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">Pick your trade</p>
-        <h2 id="ind-h">See what we'd automate in a business like yours</h2>
-        <p class="soft">Choose your trade for a sample Workflow Map and the first things we'd look at.</p>
-      </div>
-
-      <div class="trade-tabs" role="tablist" aria-label="Choose your trade">
-        <button class="trade-tab" type="button" role="tab" id="tab-recruitment" aria-controls="panel-recruitment" aria-selected="true">Recruitment</button>
-        <button class="trade-tab" type="button" role="tab" id="tab-cleaning" aria-controls="panel-cleaning" aria-selected="false" tabindex="-1">Cleaning services</button>
-        <button class="trade-tab" type="button" role="tab" id="tab-landscaping" aria-controls="panel-landscaping" aria-selected="false" tabindex="-1">Landscaping</button>
-        <button class="trade-tab" type="button" role="tab" id="tab-trades" aria-controls="panel-trades" aria-selected="false" tabindex="-1">Trades</button>
-        <button class="trade-tab" type="button" role="tab" id="tab-property" aria-controls="panel-property" aria-selected="false" tabindex="-1">Property management</button>
-        <button class="trade-tab" type="button" role="tab" id="tab-auto" aria-controls="panel-auto" aria-selected="false" tabindex="-1">Auto repair &amp; sales</button>
-        <button class="trade-tab" type="button" role="tab" id="tab-immigration" aria-controls="panel-immigration" aria-selected="false" tabindex="-1">Immigration</button>
-      </div>
-
-      <div class="trade-panel" role="tabpanel" id="panel-recruitment" aria-labelledby="tab-recruitment">
-        <div class="trade-copy">
-          <p class="who">Recruitment agencies</p>
-          <h3>More time with candidates, less admin</h3>
-          <ul class="ticks">
-            <li>CVs read and sorted against the role</li>
-            <li>Interview scheduling across both sides</li>
-            <li>Status updates to candidates and clients</li>
-          </ul>
-          <a class="btn primary" href="mailto:hello@samastik.com?subject=Workflow%20Map%20for%20a%20recruitment%20agency">Book a Workflow Map for your agency</a>
-        </div>
-        <figure class="map">
-          <div class="map-head"><div><h3>Sample Workflow Map</h3><span class="sub">4-recruiter agency · ranked by hours a week</span></div><span class="tag">Illustrative</span></div>
-          <div class="map-cols" aria-hidden="true"><span>Repeated task</span><span>Hours / week</span><span>Our call</span></div>
-          <ol class="map-rows">
-            <li class="map-row"><span class="task">Scheduling interviews over email</span><span class="hours"><span class="bar" style="width:72px"></span>6<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Screening CVs against the role</span><span class="hours"><span class="bar mute" style="width:60px"></span>5<span class="unit"> hrs/wk</span></span><span class="pill assist">AI drafts</span></li>
-            <li class="map-row"><span class="task">Sending candidates status updates</span><span class="hours"><span class="bar" style="width:48px"></span>4<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Copying CVs into the tracker</span><span class="hours"><span class="bar" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Shortlist calls with the client</span><span class="hours"><span class="bar grey" style="width:24px"></span>2<span class="unit"> hrs/wk</span></span><span class="pill human">Keep human</span></li>
-          </ol>
-          <div class="map-total"><span class="label">Hours we could give back</span><span class="big">18 hrs <small>/ week</small></span></div>
-        </figure>
-      </div>
-
-      <div class="trade-panel" role="tabpanel" id="panel-cleaning" aria-labelledby="tab-cleaning" hidden>
-        <div class="trade-copy">
-          <p class="who">Cleaning services</p>
-          <h3>From quote request to booked job, without the copying</h3>
-          <ul class="ticks">
-            <li>Quote requests straight into the job sheet</li>
-            <li>Rota changes sent to the right cleaners</li>
-            <li>Recurring bookings and invoice reminders</li>
-          </ul>
-          <a class="btn primary" href="mailto:hello@samastik.com?subject=Workflow%20Map%20for%20a%20cleaning%20business">Book a Workflow Map for your business</a>
-        </div>
-        <figure class="map">
-          <div class="map-head"><div><h3>Sample Workflow Map</h3><span class="sub">4-person cleaning company · ranked by hours a week</span></div><span class="tag">Illustrative</span></div>
-          <div class="map-cols" aria-hidden="true"><span>Repeated task</span><span>Hours / week</span><span>Our call</span></div>
-          <ol class="map-rows">
-            <li class="map-row"><span class="task">Copying quote requests into the job sheet</span><span class="hours"><span class="bar" style="width:72px"></span>6<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Messaging rota changes to each cleaner</span><span class="hours"><span class="bar" style="width:48px"></span>4<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Chasing unpaid invoices</span><span class="hours"><span class="bar" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Answering "are you free Tuesday?"</span><span class="hours"><span class="bar mute" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill assist">AI drafts</span></li>
-            <li class="map-row"><span class="task">Handling complaints</span><span class="hours"><span class="bar grey" style="width:24px"></span>2<span class="unit"> hrs/wk</span></span><span class="pill human">Keep human</span></li>
-          </ol>
-          <div class="map-total"><span class="label">Hours we could give back</span><span class="big">16 hrs <small>/ week</small></span></div>
-        </figure>
-      </div>
-
-      <div class="trade-panel" role="tabpanel" id="panel-landscaping" aria-labelledby="tab-landscaping" hidden>
-        <div class="trade-copy">
-          <p class="who">Landscaping</p>
-          <h3>No lead lost between site visits</h3>
-          <ul class="ticks">
-            <li>Calls and web enquiries logged in one place</li>
-            <li>Site-visit scheduling and quote follow-ups</li>
-            <li>Seasonal maintenance reminders to past clients</li>
-          </ul>
-          <a class="btn primary" href="mailto:hello@samastik.com?subject=Workflow%20Map%20for%20a%20landscaping%20business">Book a Workflow Map for your business</a>
-        </div>
-        <figure class="map">
-          <div class="map-head"><div><h3>Sample Workflow Map</h3><span class="sub">3-crew landscaping business · ranked by hours a week</span></div><span class="tag">Illustrative</span></div>
-          <div class="map-cols" aria-hidden="true"><span>Repeated task</span><span>Hours / week</span><span>Our call</span></div>
-          <ol class="map-rows">
-            <li class="map-row"><span class="task">Writing up calls and web enquiries by hand</span><span class="hours"><span class="bar" style="width:60px"></span>5<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Booking site visits over the phone</span><span class="hours"><span class="bar" style="width:48px"></span>4<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Following up on quotes sent</span><span class="hours"><span class="bar" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Turning site notes into a quote</span><span class="hours"><span class="bar mute" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill assist">AI drafts</span></li>
-            <li class="map-row"><span class="task">Walking a client through a design</span><span class="hours"><span class="bar grey" style="width:24px"></span>2<span class="unit"> hrs/wk</span></span><span class="pill human">Keep human</span></li>
-          </ol>
-          <div class="map-total"><span class="label">Hours we could give back</span><span class="big">15 hrs <small>/ week</small></span></div>
-        </figure>
-      </div>
-
-      <div class="trade-panel" role="tabpanel" id="panel-trades" aria-labelledby="tab-trades" hidden>
-        <div class="trade-copy">
-          <p class="who">Plumbers, electricians &amp; HVAC</p>
-          <h3>Answer every call, quote every job</h3>
-          <ul class="ticks">
-            <li>Missed calls get an instant text back</li>
-            <li>Job requests logged with address and photos</li>
-            <li>Quote follow-ups and service reminders</li>
-          </ul>
-          <a class="btn primary" href="mailto:hello@samastik.com?subject=Workflow%20Map%20for%20a%20trades%20business">Book a Workflow Map for your business</a>
-        </div>
-        <figure class="map">
-          <div class="map-head"><div><h3>Sample Workflow Map</h3><span class="sub">5-engineer plumbing &amp; heating firm · ranked by hours a week</span></div><span class="tag">Illustrative</span></div>
-          <div class="map-cols" aria-hidden="true"><span>Repeated task</span><span>Hours / week</span><span>Our call</span></div>
-          <ol class="map-rows">
-            <li class="map-row"><span class="task">Calling back missed calls</span><span class="hours"><span class="bar" style="width:72px"></span>6<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Booking jobs and texting arrival times</span><span class="hours"><span class="bar" style="width:60px"></span>5<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Following up on quotes sent</span><span class="hours"><span class="bar" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Turning job notes into a quote</span><span class="hours"><span class="bar mute" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill assist">AI drafts</span></li>
-            <li class="map-row"><span class="task">Diagnosing a fault over the phone</span><span class="hours"><span class="bar grey" style="width:24px"></span>2<span class="unit"> hrs/wk</span></span><span class="pill human">Keep human</span></li>
-          </ol>
-          <div class="map-total"><span class="label">Hours we could give back</span><span class="big">17 hrs <small>/ week</small></span></div>
-        </figure>
-      </div>
-
-      <div class="trade-panel" role="tabpanel" id="panel-property" aria-labelledby="tab-property" hidden>
-        <div class="trade-copy">
-          <p class="who">Property managers &amp; letting agents</p>
-          <h3>Every repair logged, every tenant answered</h3>
-          <ul class="ticks">
-            <li>Repair requests logged and sent to the right contractor</li>
-            <li>Rent reminders and receipts on schedule</li>
-            <li>Viewing bookings and applicant follow-ups</li>
-          </ul>
-          <a class="btn primary" href="mailto:hello@samastik.com?subject=Workflow%20Map%20for%20a%20property%20business">Book a Workflow Map for your agency</a>
-        </div>
-        <figure class="map">
-          <div class="map-head"><div><h3>Sample Workflow Map</h3><span class="sub">Letting agency, 150 homes managed · ranked by hours a week</span></div><span class="tag">Illustrative</span></div>
-          <div class="map-cols" aria-hidden="true"><span>Repeated task</span><span>Hours / week</span><span>Our call</span></div>
-          <ol class="map-rows">
-            <li class="map-row"><span class="task">Logging repairs and briefing contractors</span><span class="hours"><span class="bar" style="width:72px"></span>6<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Sending rent reminders and receipts</span><span class="hours"><span class="bar" style="width:48px"></span>4<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Booking viewings</span><span class="hours"><span class="bar" style="width:48px"></span>4<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Answering routine tenant questions</span><span class="hours"><span class="bar mute" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill assist">AI drafts</span></li>
-            <li class="map-row"><span class="task">Handling a dispute with a tenant</span><span class="hours"><span class="bar grey" style="width:24px"></span>2<span class="unit"> hrs/wk</span></span><span class="pill human">Keep human</span></li>
-          </ol>
-          <div class="map-total"><span class="label">Hours we could give back</span><span class="big">17 hrs <small>/ week</small></span></div>
-        </figure>
-      </div>
-
-      <div class="trade-panel" role="tabpanel" id="panel-auto" aria-labelledby="tab-auto" hidden>
-        <div class="trade-copy">
-          <p class="who">Auto repair &amp; sales</p>
-          <h3>Fewer phone calls, faster replies to every customer</h3>
-          <ul class="ticks">
-            <li>"Your car is ready" updates sent automatically</li>
-            <li>Service bookings, reminders and estimate approvals</li>
-            <li>Leads from listing sites routed to the right person</li>
-          </ul>
-          <a class="btn primary" href="mailto:hello@samastik.com?subject=Workflow%20Map%20for%20a%20garage">Book a Workflow Map for your garage</a>
-        </div>
-        <figure class="map">
-          <div class="map-head"><div><h3>Sample Workflow Map</h3><span class="sub">6-bay garage with used-car sales · ranked by hours a week</span></div><span class="tag">Illustrative</span></div>
-          <div class="map-cols" aria-hidden="true"><span>Repeated task</span><span>Hours / week</span><span>Our call</span></div>
-          <ol class="map-rows">
-            <li class="map-row"><span class="task">Calling customers when the car is ready</span><span class="hours"><span class="bar" style="width:60px"></span>5<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Booking services and sending reminders</span><span class="hours"><span class="bar" style="width:48px"></span>4<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Replying to listing-site enquiries</span><span class="hours"><span class="bar mute" style="width:48px"></span>4<span class="unit"> hrs/wk</span></span><span class="pill assist">AI drafts</span></li>
-            <li class="map-row"><span class="task">Chasing customers to approve estimates</span><span class="hours"><span class="bar" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Explaining a repair to a customer</span><span class="hours"><span class="bar grey" style="width:24px"></span>2<span class="unit"> hrs/wk</span></span><span class="pill human">Keep human</span></li>
-          </ol>
-          <div class="map-total"><span class="label">Hours we could give back</span><span class="big">16 hrs <small>/ week</small></span></div>
-        </figure>
-      </div>
-
-      <div class="trade-panel" role="tabpanel" id="panel-immigration" aria-labelledby="tab-immigration" hidden>
-        <div class="trade-copy">
-          <p class="who">Immigration consultancies</p>
-          <h3>Every case moving, every client updated</h3>
-          <ul class="ticks">
-            <li>Document checklists collected and tracked</li>
-            <li>Case status updates sent automatically</li>
-            <li>Enquiries qualified before the first call</li>
-          </ul>
-          <a class="btn primary" href="mailto:hello@samastik.com?subject=Workflow%20Map%20for%20an%20immigration%20consultancy">Book a Workflow Map for your consultancy</a>
-        </div>
-        <figure class="map">
-          <div class="map-head"><div><h3>Sample Workflow Map</h3><span class="sub">Consultancy with 3 case officers · ranked by hours a week</span></div><span class="tag">Illustrative</span></div>
-          <div class="map-cols" aria-hidden="true"><span>Repeated task</span><span>Hours / week</span><span>Our call</span></div>
-          <ol class="map-rows">
-            <li class="map-row"><span class="task">Chasing clients for missing documents</span><span class="hours"><span class="bar" style="width:72px"></span>6<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Sending case status updates</span><span class="hours"><span class="bar" style="width:48px"></span>4<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">Booking consultation calls</span><span class="hours"><span class="bar" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill auto">Automate</span></li>
-            <li class="map-row"><span class="task">First replies to "which visa can I get?"</span><span class="hours"><span class="bar mute" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill assist">AI drafts</span></li>
-            <li class="map-row"><span class="task">Advising on a client's case</span><span class="hours"><span class="bar grey" style="width:36px"></span>3<span class="unit"> hrs/wk</span></span><span class="pill human">Keep human</span></li>
-          </ol>
-          <div class="map-total"><span class="label">Hours we could give back</span><span class="big">16 hrs <small>/ week</small></span></div>
-        </figure>
-      </div>
-
-      <p class="soft">Sample maps show the format, not results. We also work with moving companies, bookkeepers and tutoring centres. Not on the list? If your team does the same task more than a few times a week, the Workflow Map will find it.</p>
     </div>
   </section>
 
@@ -572,42 +200,61 @@ footer.site a { color: var(--ink-3); }
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">How it works</p>
-        <h2 id="how-h">Map, build, then keep improving</h2>
+        <h2 id="how-h">Talk, map, build.</h2>
       </div>
       <ol class="steps">
-        <li><span class="step-n"><b>1</b>Map</span><h3>See the whole workflow</h3><p class="soft">The one-week Workflow Map. You decide what to build from a ranked list with hours attached.</p></li>
-        <li><span class="step-n"><b>2</b>Build</span><h3>Automate the top items</h3><p class="soft">We build on tools you already use where we can, test with your real data, and train your team.</p></li>
-        <li><span class="step-n"><b>3</b>Run</span><h3>Run and improve</h3><p class="soft">We watch how it performs, fix what breaks, and take on the next item on the map when you're ready.</p></li>
+        <li><span class="step-n">Step 1 · 30 minutes</span><h3>Free growth call</h3><p class="soft">We learn how you win and deliver work, and tell you where automation would pay off.</p><span class="price">Free</span></li>
+        <li><span class="step-n">Step 2 · One week</span><h3>The Workflow Map</h3><p class="soft">We watch your team at work and list what's worth automating, with the time it saves and the cost to build. The fee counts toward the build.</p><span class="price">$530 / ₹19,900</span></li>
+        <li><span class="step-n">Step 3 · Build and run</span><h3>We build it and keep it working</h3><p class="soft">Fixed quotes, tested on your real data, then looked after so it keeps running.</p></li>
       </ol>
     </div>
   </section>
 
-  <section class="block" id="about" aria-labelledby="about-h">
+  <section class="own" aria-labelledby="own-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Built in your accounts</p>
+        <h2 id="own-h">Still yours if we part ways.</h2>
+      </div>
+      <ul class="own-grid">
+        <li><strong>In your name</strong><span>Every tool and account we set up is registered to your business, not to us.</span></li>
+        <li><strong>Your data</strong><span>Customer and business data stays in your accounts. You decide who has access.</span></li>
+        <li><strong>No lock-in</strong><span>If we stop working together, everything keeps running.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="who-h">
     <div class="wrap split">
-      <div class="about-name">
-        <p class="eyebrow">About</p>
-        <span class="deva" lang="sa">समस्त</span>
-        <span class="gloss">samasta · Sanskrit · "the whole"</span>
+      <div class="head">
+        <p class="eyebrow">Who it's for</p>
+        <h2 id="who-h">Small teams that want to grow without hiring for admin.</h2>
       </div>
       <div class="stack">
-        <h2 id="about-h">Samastik comes from the Sanskrit samasta, "the whole".</h2>
-        <p class="soft">The name is the method. We understand the problem first by working alongside you, then automate.</p>
-        <blockquote>"We understand the problem first by working with you."</blockquote>
+        <div class="chips">
+          <span class="chip">Recruitment agencies</span>
+          <span class="chip">Cleaning services</span>
+          <span class="chip">Landscaping</span>
+          <span class="chip">Plumbers, electricians and HVAC</span>
+          <span class="chip">Property management</span>
+          <span class="chip">Car dealers and garages</span>
+          <span class="chip">Immigration consultancies</span>
+        </div>
+        <p class="soft">We've built automations for a recruitment agency and an immigration consultancy.</p>
+        <div><span class="deva" lang="sa">समस्त</span><br><span class="gloss">Samastik comes from samasta, Sanskrit for "the whole". We look at the whole business before changing any part of it.</span></div>
       </div>
     </div>
   </section>
 
   <section class="contact" id="contact" aria-labelledby="contact-h">
     <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">Contact</p>
-        <h2 id="contact-h">Tell us where the hours go.</h2>
-        <p class="soft">Email us a line about your business and the task that eats the most time. We'll reply within one working day to set up a 20-minute call.</p>
-      </div>
+      <p class="eyebrow">Book a free growth call</p>
+      <h2 id="contact-h">Let's find what's worth automating.</h2>
+      <p class="soft">Email us a line about your business. We'll reply within one working day with times for a 30-minute call.</p>
       <div class="contact-row">
         <span class="email" id="email-address">hello@samastik.com</span>
         <button class="copy" id="copy-email" type="button">Copy address</button>
-        <a class="btn primary" href="mailto:hello@samastik.com?subject=Workflow%20Map">Email us</a>
+        <a class="btn primary" href="mailto:hello@samastik.com?subject=Free%20growth%20call">Email us</a>
       </div>
     </div>
   </section>
@@ -621,44 +268,6 @@ footer.site a { color: var(--ink-3); }
 </footer>
 
 <script>
-(function () {
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.trade-tab'));
-  if (!tabs.length) return;
-  function select(tab, focus) {
-    tabs.forEach(function (t) {
-      var on = t === tab;
-      t.setAttribute('aria-selected', on ? 'true' : 'false');
-      t.tabIndex = on ? 0 : -1;
-      var panel = document.getElementById(t.getAttribute('aria-controls'));
-      if (panel) panel.hidden = !on;
-    });
-    if (focus) tab.focus();
-  }
-  function byTrade(name) { return document.getElementById('tab-' + name); }
-  tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () { select(t, false); });
-    t.addEventListener('keydown', function (e) {
-      var n = null;
-      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
-      if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
-      if (e.key === 'Home') n = tabs[0];
-      if (e.key === 'End') n = tabs[tabs.length - 1];
-      if (n) { e.preventDefault(); select(n, true); }
-    });
-  });
-  Array.prototype.forEach.call(document.querySelectorAll('[data-trade]'), function (a) {
-    a.addEventListener('click', function () {
-      var t = byTrade(a.getAttribute('data-trade'));
-      if (t) select(t, false);
-    });
-  });
-  var start = byTrade((location.hash || '').slice(1));
-  if (start) {
-    select(start, false);
-    var sec = document.getElementById('industries');
-    if (sec) sec.scrollIntoView();
-  }
-})();
 (function () {
   var btn = document.getElementById('copy-email');
   var addr = document.getElementById('email-address');
