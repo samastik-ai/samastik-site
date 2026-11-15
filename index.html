@@ -102,21 +102,20 @@ section.block > .wrap { padding-block: 88px; display: grid; gap: 40px; }
 .own-grid strong { font-family: var(--display); font-size: 1.15rem; }
 .own-grid span { color: #d3e3d9; }
 
-.cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.case { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 26px; display: grid; gap: 14px; align-content: start; }
-.case-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.case h3 { font-size: 1.3rem; letter-spacing: -0.015em; }
-.tag { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-marigold); background: var(--marigold); border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
-.case ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.cases { display: grid; gap: 16px; }
+.tabs { display: none; flex-wrap: wrap; gap: 10px; }
+.js-tabs .tabs { display: flex; }
+.tab { min-height: 44px; font-family: var(--body); font-weight: 600; font-size: 0.98rem; color: var(--ink-2); background: var(--card); border: 1.5px solid var(--line); border-radius: 999px; padding: 0 18px; cursor: pointer; }
+.tab:hover { color: var(--ink); border-color: var(--ink-3); }
+.tab[aria-selected="true"] { background: var(--marigold); border-color: var(--marigold); color: var(--on-marigold); }
+.case { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: clamp(24px, 4vw, 40px); display: grid; gap: 18px; align-content: start; }
+.case-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.case h3 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.02em; }
+.case .benefit { font-size: 1.1rem; color: var(--ink); max-width: 56ch; }
+.case ul { list-style: none; margin: 0; padding: 18px 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 32px; }
 .case li { position: relative; padding-left: 22px; color: var(--ink-2); }
 .case li::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--green-lit); }
-.case li.done { color: var(--ink); }
-.case li.done::before { background: var(--marigold); border-color: var(--marigold); }
-.case.open { background: transparent; border-style: dashed; }
-.case.open p { color: var(--ink-2); }
-.case.open .btn { justify-self: start; }
-.legend { font-size: 0.92rem; color: var(--ink-3); display: flex; gap: 8px; align-items: center; }
-.legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--marigold); }
+.case .btn { justify-self: start; }
 .split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr); gap: 56px; align-items: start; }
 .chips { display: flex; flex-wrap: wrap; gap: 10px; }
 .chip { font-size: 0.95rem; color: var(--ink); padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
@@ -146,7 +145,8 @@ footer.site a { color: var(--ink-3); }
   .actions .btn { width: 100%; }
   .facts { grid-template-columns: minmax(0, 1fr); }
   .facts li, .facts li + li { padding: 18px 0; border-left: 0; border-bottom: 1px solid var(--line); }
-  .problems, .cases { grid-template-columns: minmax(0, 1fr); }
+  .problems, .case ul { grid-template-columns: minmax(0, 1fr); }
+  .case .btn { width: 100%; }
   section.block > .wrap { padding-block: 60px; }
   .contact .wrap { padding-block: 64px; }
   .contact-row .btn, .contact-row .email, .contact-row button.copy { width: 100%; text-align: center; }
@@ -244,78 +244,101 @@ footer.site a { color: var(--ink-3); }
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">Use cases</p>
-        <h2 id="cases-h">What we automate, by industry.</h2>
-        <p class="soft">Two of these we've already built for clients. The rest are the jobs we see eating time in businesses like yours.</p>
-        <p class="legend"><i aria-hidden="true"></i> Already built for a client</p>
+        <h2 id="cases-h">Pick your industry.</h2>
+        <p class="soft">See what we'd automate for a business like yours.</p>
       </div>
-      <div class="cases">
-        <article class="case">
-          <div class="case-top"><h3>Immigration consultancies</h3><span class="tag">Built for a client</span></div>
+      <div class="cases" id="case-tabs">
+        <div class="tabs" role="tablist" aria-label="Industries">
+          <button class="tab" type="button" role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true">Immigration</button>
+          <button class="tab" type="button" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false">Recruitment</button>
+          <button class="tab" type="button" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">Cleaning</button>
+          <button class="tab" type="button" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">Landscaping</button>
+          <button class="tab" type="button" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false">Trades and HVAC</button>
+          <button class="tab" type="button" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false">Property</button>
+          <button class="tab" type="button" role="tab" id="tab-6" aria-controls="panel-6" aria-selected="false">Cars and garages</button>
+          <button class="tab" type="button" role="tab" id="tab-7" aria-controls="panel-7" aria-selected="false">Something else</button>
+        </div>
+        <article class="case" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+          <div class="case-top"><h3>Immigration consultancies</h3></div>
+          <p class="benefit">Less typing and chasing on every file, so your team can take on more cases.</p>
           <ul>
-            <li class="done">Visa application forms filled from the details the client already gave you. Nothing typed twice.</li>
-            <li>Passport and document scans read automatically, with names, dates and numbers pulled into the file.</li>
-            <li>A document checklist for each visa type, with reminders until every file is in.</li>
-            <li>Passport, permit and medical expiry dates tracked, with a warning before anything lapses.</li>
+              <li>Visa application forms filled from the details the client already gave you. Nothing typed twice.</li>
+              <li>Passport and document scans read automatically, with names, dates and numbers pulled into the file.</li>
+              <li>A document checklist for each visa type, with reminders until every file is in.</li>
+              <li>Passport, permit and medical expiry dates tracked, with a warning before anything lapses.</li>
           </ul>
+          <a class="btn primary" href="#contact">Book a free call</a>
         </article>
-        <article class="case">
-          <div class="case-top"><h3>Recruitment agencies</h3><span class="tag">Built for a client</span></div>
+        <article class="case" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+          <div class="case-top"><h3>Recruitment agencies</h3></div>
+          <p class="benefit">Less time on inboxes and spreadsheets, more time talking to candidates and clients.</p>
           <ul>
-            <li class="done">New applicants logged, sorted and followed up without copy-paste.</li>
-            <li>CVs from email and job boards read into your tracker: skills, experience, notice period.</li>
-            <li>Candidates book their own interview slots and get reminders, so fewer of them no-show.</li>
-            <li>Shortlists formatted and sent to the client, with a weekly update on every open role.</li>
+              <li>New applicants logged, sorted and followed up without copy-paste.</li>
+              <li>CVs from email and job boards read into your tracker: skills, experience, notice period.</li>
+              <li>Candidates book their own interview slots and get reminders, so fewer of them no-show.</li>
+              <li>Shortlists formatted and sent to the client, with a weekly update on every open role.</li>
           </ul>
+          <a class="btn primary" href="#contact">Book a free call</a>
         </article>
-        <article class="case">
+        <article class="case" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
           <div class="case-top"><h3>Cleaning services</h3></div>
+          <p class="benefit">Faster quotes, fuller schedules and invoices that send themselves.</p>
           <ul>
-            <li>Quote requests answered in minutes with a price from your own rate card.</li>
-            <li>Recurring cleans scheduled, with a reminder to the customer the day before.</li>
-            <li>Invoice sent when the job is marked done, and late payers chased politely.</li>
-            <li>A Google review request after every finished job.</li>
+              <li>Quote requests answered in minutes with a price from your own rate card.</li>
+              <li>Recurring cleans scheduled, with a reminder to the customer the day before.</li>
+              <li>Invoice sent when the job is marked done, and late payers chased politely.</li>
+              <li>A Google review request after every finished job.</li>
           </ul>
+          <a class="btn primary" href="#contact">Book a free call</a>
         </article>
-        <article class="case">
+        <article class="case" role="tabpanel" id="panel-3" aria-labelledby="tab-3">
           <div class="case-top"><h3>Landscaping</h3></div>
+          <p class="benefit">No enquiry left unanswered, even when you're out on a job all day.</p>
           <ul>
-            <li>Enquiries from the website, phone and Facebook in one list, each with an estimate visit booked.</li>
-            <li>Sent quotes followed up until the customer says yes or no.</li>
-            <li>Past customers reminded each season: spring clean-up, autumn leaves, winter prep.</li>
-            <li>Tomorrow's jobs and addresses sent to each crew the evening before.</li>
+              <li>Enquiries from the website, phone and Facebook in one list, each with an estimate visit booked.</li>
+              <li>Sent quotes followed up until the customer says yes or no.</li>
+              <li>Past customers reminded each season: spring clean-up, autumn leaves, winter prep.</li>
+              <li>Tomorrow's jobs and addresses sent to each crew the evening before.</li>
           </ul>
+          <a class="btn primary" href="#contact">Book a free call</a>
         </article>
-        <article class="case">
+        <article class="case" role="tabpanel" id="panel-4" aria-labelledby="tab-4">
           <div class="case-top"><h3>Plumbers, electricians and HVAC</h3></div>
+          <p class="benefit">Stop losing jobs to missed calls and paperwork done at night.</p>
           <ul>
-            <li>Missed a call on a job? The caller gets a text back straight away, before they ring someone else.</li>
-            <li>One booking creates the job, the quote and the invoice. No typing it three times.</li>
-            <li>Customers reminded when the yearly boiler or AC service is due.</li>
-            <li>An "on the way" text before each visit and a review request after it.</li>
+              <li>Missed a call on a job? The caller gets a text back straight away, before they ring someone else.</li>
+              <li>One booking creates the job, the quote and the invoice. No typing it three times.</li>
+              <li>Customers reminded when the yearly boiler or AC service is due.</li>
+              <li>An "on the way" text before each visit and a review request after it.</li>
           </ul>
+          <a class="btn primary" href="#contact">Book a free call</a>
         </article>
-        <article class="case">
+        <article class="case" role="tabpanel" id="panel-5" aria-labelledby="tab-5">
           <div class="case-top"><h3>Property management</h3></div>
+          <p class="benefit">Fewer tenant calls, no missed dates and reports without the monthly scramble.</p>
           <ul>
-            <li>Maintenance requests logged with photos, sent to the right contractor, and the tenant kept updated.</li>
-            <li>Rent reminders before the due date and follow-ups after it.</li>
-            <li>Lease renewals, inspections and safety certificates tracked so no date is missed.</li>
-            <li>Monthly owner reports that put themselves together.</li>
+              <li>Maintenance requests logged with photos, sent to the right contractor, and the tenant kept updated.</li>
+              <li>Rent reminders before the due date and follow-ups after it.</li>
+              <li>Lease renewals, inspections and safety certificates tracked so no date is missed.</li>
+              <li>Monthly owner reports that put themselves together.</li>
           </ul>
+          <a class="btn primary" href="#contact">Book a free call</a>
         </article>
-        <article class="case">
+        <article class="case" role="tabpanel" id="panel-6" aria-labelledby="tab-6">
           <div class="case-top"><h3>Car dealers and garages</h3></div>
+          <p class="benefit">Customers who come back on time and enquiries that don't go cold.</p>
           <ul>
-            <li>Service and MOT reminders sent from the dates already in your records.</li>
-            <li>Extra work approved by text with photos, and a message when the car is ready.</li>
-            <li>Enquiries from your website and listing sites answered and followed up the same day.</li>
-            <li>Test drives booked and confirmed without phone tag.</li>
+              <li>Service and MOT reminders sent from the dates already in your records.</li>
+              <li>Extra work approved by text with photos, and a message when the car is ready.</li>
+              <li>Enquiries from your website and listing sites answered and followed up the same day.</li>
+              <li>Test drives booked and confirmed without phone tag.</li>
           </ul>
+          <a class="btn primary" href="#contact">Book a free call</a>
         </article>
-        <article class="case open">
-          <h3>Not on the list?</h3>
-          <p>Most small businesses lose time in the same places: enquiries answered late, quotes nobody chases, the same details typed into three systems. On a free call we'll find yours.</p>
-          <a class="btn ghost" href="#contact">Book a free call</a>
+        <article class="case" role="tabpanel" id="panel-7" aria-labelledby="tab-7">
+          <div class="case-top"><h3>Not on the list?</h3></div>
+          <p class="benefit">Most small businesses lose time in the same places: enquiries answered late, quotes nobody chases, the same details typed into three systems. On a free call we'll find yours.</p>
+          <a class="btn primary" href="#contact">Book a free call</a>
         </article>
       </div>
     </div>
@@ -361,6 +384,28 @@ footer.site a { color: var(--ink-3); }
       } else { fallback(); }
     } catch (e) { fallback(); }
   });
+})();
+</script>
+<script>
+(function () {
+  var root = document.getElementById('case-tabs');
+  if (!root) return;
+  var tabs = [].slice.call(root.querySelectorAll('[role="tab"]'));
+  var panels = [].slice.call(root.querySelectorAll('[role="tabpanel"]'));
+  function show(i, focus) {
+    tabs.forEach(function (t, n) { t.setAttribute('aria-selected', n === i ? 'true' : 'false'); t.tabIndex = n === i ? 0 : -1; });
+    panels.forEach(function (p, n) { p.hidden = n !== i; });
+    if (focus) tabs[i].focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(i); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') show((i + 1) % tabs.length, true);
+      else if (e.key === 'ArrowLeft') show((i + tabs.length - 1) % tabs.length, true);
+    });
+  });
+  root.classList.add('js-tabs');
+  show(0);
 })();
 </script>
 </body>
